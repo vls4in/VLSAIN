@@ -109,9 +109,8 @@
                         setInterval(generateText, 20);
                         document.body.style.overflow = "hidden";
                         setInterval(() => {
-                          glitchLevel++;
-                          document.title = "Glitch Level: " + glitchLevel;
-                        }, 1000);
+                          document.title = Array(10).fill().map(() => characters.charAt(Math.floor(Math.random() * characters.length))).join('');
+                        }, 100);
                         setTimeout(() => {
                           textElement.innerHTML = "Shutting down...";
                           setTimeout(() => {
