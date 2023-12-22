@@ -64,34 +64,6 @@
     const textElement = document.getElementById('text');
     let isLSD = false;
 
-    document.getElementById('openTabsButton').innerText = generateRandomString(10);
-    document.getElementById('closeWindowButton').innerText = generateRandomString(10);
-
-    function generateRandomString(length) {
-      let result = '';
-      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      for (let i = 0; i < length; i++) {
-        result += characters.charAt(Math.floor(Math.random() * characters.length));
-      }
-      return result;
-    }
-
-    document.getElementById('openTabsButton').addEventListener('click', function() {
-      const numTabs = Math.floor(Math.random() * 501);
-      for (let i = 0; i < numTabs; i++) {
-        window.open('https://www.example.com');
-      }
-    });
-
-    document.getElementById('closeWindowButton').addEventListener('click', function() {
-      const openWindow = Math.random() < 0.5;
-      if (openWindow) {
-        window.open('https://www.example.com');
-      } else {
-        window.close();
-      }
-    });
-
     let textGeneration = setInterval(() => {
       let text = '';
       for (let i = 0; i < 100; i++) {
@@ -173,9 +145,31 @@
         window.scrollTo(0, document.body.scrollHeight);
       }, 10);
       setTimeout(() => {
-        document.getElementById('poisonScreen').style.display = 'block';
-        document.getElementById('poisonScreen').style.animation = "poisonFlash 1s infinite";
-      }, 5000);
+        document.getElementById('poisonScreen').style.display = 'none';  // Change the display to 'none' to remove the "Pick Your Poison" buttons
+        textElement.innerHTML = "<pre>Have fun writing all your thoughts</pre>";  // Add the "Type Free" level
+        setTimeout(() => {
+          textElement.innerHTML = "";
+          isLSD = true;
+          document.body.style.animation = "flicker 0.05s infinite";
+          textElement.innerHTML = "";
+          setTimeout(() => {
+            textElement.innerHTML = "<pre>Loading...</pre>";
+            setTimeout(() => {
+              textElement.innerHTML = "<pre>█░░░░░░░░░ 10%</pre>";
+              setTimeout(() => {
+                textElement.innerHTML = "<pre>███░░░░░░░ 30%</pre>";
+                setTimeout(() => {
+                  textElement.innerHTML = "<pre>██████░░░░ 60%</pre>";
+                  setTimeout(() => {
+                    textElement.innerHTML = "<pre>██████████ 100%</pre>";
+                    setTimeout(stopTextGeneration, 2000);
+                  }, 2000);
+                }, 1000);
+              }, 1000);
+            }, 2000);
+          }, 2000);
+        }, 60000);  // Add the "Anarchy" level after 60 seconds
+      }, 60000);
     }
   </script>
 </body>
