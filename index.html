@@ -138,86 +138,25 @@
                                                   document.body.style.color = "black";
                                                   textElement.innerHTML = "<pre>Welcome to the calm environment.</pre>";
                                                   setTimeout(() => {
-                                                    textElement.innerHTML = "<pre>Fake compiling...</pre>";
-                                                    setTimeout(() => {
-                                                      textElement.innerHTML = "<pre>Fake compiling... 10%</pre>";
-                                                      setTimeout(() => {
-                                                        textElement.innerHTML = "<pre>Fake compiling... 30%</pre>";
-                                                        setTimeout(() => {
-                                                          textElement.innerHTML = "<pre>Fake compiling... 60%</pre>";
-                                                          setTimeout(() => {
-                                                            textElement.innerHTML = "<pre>Fake compiling... 90%</pre>";
-                                                            setTimeout(() => {
-                                                              textElement.innerHTML = "<pre>Fake compiling... 100%</pre>";
-                                                              setTimeout(() => {
-                                                                textElement.innerHTML = "";
-                                                                isLSD = true;
-                                                                document.body.style.animation = "flicker 0.01s infinite";
-                                                                textElement.innerHTML = "";
-                                                                setTimeout(() => {
-                                                                  isLSD = false;
-                                                                  document.body.style.animation = "flicker 0.1s infinite";
-                                                                  textElement.innerHTML = "";
-                                                                  setTimeout(() => {
-                                                                    textElement.innerHTML = "<pre>just kidding, here we go again</pre>";
-                                                                    isLSD = true;
-                                                                    document.body.style.animation = "flicker 0.05s infinite";
-                                                                    textElement.innerHTML = "";
-                                                                    setTimeout(() => {
-                                                                      textElement.innerHTML = "<pre>Loading...</pre>";
-                                                                      setTimeout(() => {
-                                                                        textElement.innerHTML = "<pre>█░░░░░░░░░ 10%</pre>";
-                                                                        setTimeout(() => {
-                                                                          textElement.innerHTML = "<pre>███░░░░░░░ 30%</pre>";
-                                                                          setTimeout(() => {
-                                                                            textElement.innerHTML = "<pre>██████░░░░ 60%</pre>";
-                                                                            setTimeout(() => {
-                                                                              textElement.innerHTML = "<pre>██████████ 100%</pre>";
-                                                                              setTimeout(stopTextGeneration, 2000);
-                                                                              setTimeout(() => {
-                                                                                textElement.innerHTML = "<pre>Rebooting...</pre>";
-                                                                                setTimeout(() => {
-                                                                                  textElement.innerHTML = "<pre>Reboot successful. Welcome back.</pre>";
-                                                                                  document.body.style.animation = "none";
-                                                                                  document.body.style.backgroundColor = "white";
-                                                                                  document.body.style.color = "black";
-                                                                                  textElement.innerHTML = "<pre>Welcome to the calm environment.</pre>";
-                                                                                  setTimeout(() => {
-                                                                                    textElement.innerHTML = "<pre>hi my names vlsain</pre>";
-                                                                                    textElement.style.animation = "glitch 0.1s infinite";
-                                                                                    textElement.style.position = "absolute";
-                                                                                    textElement.style.top = "50%";
-                                                                                    textElement.style.left = "50%";
-                                                                                    textElement.style.transform = "translate(-50%, -50%)";
+                                                    textElement.innerHTML = "<pre>hi my names vlsain</pre>";
+                                                    textElement.style.animation = "glitch 0.1s infinite";
+                                                    textElement.style.position = "absolute";
+                                                    textElement.style.top = "50%";
+                                                    textElement.style.left = "50%";
+                                                    textElement.style.transform = "translate(-50%, -50%)";
 
-                                                                                    for (let i = 0; i < 100; i++) {
-                                                                                      const binaryLine = document.createElement('div');
-                                                                                      binaryLine.innerText = "0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101";
-                                                                                      binaryLine.style.position = "absolute";
-                                                                                      binaryLine.style.top = `${Math.random() * 100}vh`;
-                                                                                      binaryLine.style.left = `${Math.random() * 100}vw`;
-                                                                                      binaryLine.style.color = "green";
-                                                                                      binaryLine.style.whiteSpace = "nowrap";
-                                                                                      binaryLine.style.overflow = "hidden";
-                                                                                      binaryLine.style.animation = "flow 10s linear infinite";
-                                                                                      document.body.appendChild(binaryLine);
-                                                                                    }
-                                                                                  }, 2000);
-                                                                                }, 2000);
-                                                                              }, 2000);
-                                                                            }, 2000);
-                                                                          }, 1000);
-                                                                        }, 1000);
-                                                                      }, 2000);
-                                                                    }, 2000);
-                                                                  }, 2000);
-                                                                }, 5000);
-                                                              }, 2000);
-                                                            }, 2000);
-                                                          }, 2000);
-                                                        }, 2000);
-                                                      }, 2000);
-                                                    }, 2000);
+                                                    for (let i = 0; i < 100; i++) {
+                                                      const binaryLine = document.createElement('div');
+                                                      binaryLine.innerText = "0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101";
+                                                      binaryLine.style.position = "absolute";
+                                                      binaryLine.style.top = `${Math.random() * 100}vh`;
+                                                      binaryLine.style.left = `${Math.random() * 100}vw`;
+                                                      binaryLine.style.color = "green";
+                                                      binaryLine.style.whiteSpace = "nowrap";
+                                                      binaryLine.style.overflow = "hidden";
+                                                      binaryLine.style.animation = "flow 10s linear infinite";
+                                                      document.body.appendChild(binaryLine);
+                                                    }
                                                   }, 2000);
                                                 }, 2000);
                                               }, 2000);
@@ -245,9 +184,9 @@
   </script>
   <style>
     @keyframes flow {
-      to {
-        transform: translateX(-100vw);
-      }
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-100vh); }
+      100% { transform: translateY(100vh); }
     }
   </style>
 </body>
