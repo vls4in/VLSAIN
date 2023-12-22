@@ -118,6 +118,12 @@
                             textElement.innerHTML = "Just kidding, here's even worse";
                             document.body.style.animation = "glitch 0.05s infinite";
                             setInterval(generateText, 10);
+                            setTimeout(() => {
+                              document.body.style.animation = "none";
+                              textElement.innerHTML = "Welcome to the void";
+                              document.body.style.backgroundColor = "black";
+                              document.body.style.color = "black";
+                            }, 10000);
                           }, 2000);
                         }, 2000);
                       }, 2000);
