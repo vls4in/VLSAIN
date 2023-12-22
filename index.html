@@ -36,12 +36,29 @@
       0% { background-color: black; color: green; }
       100% { background-color: black; color: green; }
     }
+    @keyframes poisonFlash {
+      0% { background-color: black; color: red; }
+      50% { background-color: red; color: black; }
+      100% { background-color: black; color: red; }
+    }
+    .poisonButton {
+      animation: glitch 0.1s infinite;
+      border: 2px solid white;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <div id="text"></div>
   <audio id="catSound" src="boom.mp3"></audio>
   <img src="" id="catImage" style="display: none; max-width: 100px; height: auto;">
+  <div id="poisonScreen" style="display: none; text-align: center;">
+    <h1 style="animation: poisonFlash 1s infinite;">PICK YOUR POISON</h1>
+    <button class="poisonButton" id="openTabsButton">Open 300 Tabs</button>
+    <button class="poisonButton" id="closeWindowButton">Close Window</button>
+  </div>
   <script>
     const textElement = document.getElementById('text');
     let isLSD = false;
@@ -66,6 +83,10 @@
         textElement.innerHTML += text + '<br>';
         window.scrollTo(0, document.body.scrollHeight);
       }, 10);
+      setTimeout(() => {
+        document.getElementById('poisonScreen').style.display = 'block';
+        document.getElementById('poisonScreen').style.animation = "poisonFlash 1s infinite";
+      }, 5000);
     }
 
     let textGeneration = setInterval(() => {
@@ -129,4 +150,4 @@
     }, 2000);
   </script>
 </body>
-</html>
+  </html>
