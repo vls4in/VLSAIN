@@ -48,177 +48,117 @@
       textElement.style.animation = "glitch 0.2s infinite";
       document.body.style.overflow = "hidden";
       document.body.style.animation = "glitch 0.1s infinite";
-    }
-
-    let textGeneration = setInterval(() => {
-      let text = '';
-      for (let i = 0; i < 100; i++) {
-        text += String.fromCharCode(Math.floor(Math.random() * (126 - 32) + 32));
-      }
-      textElement.innerHTML += text + '<br>';
-      if (Math.random() < 0.01) {
-        fetch('https://api.thecatapi.com/v1/images/search')
-          .then(response => response.json())
-          .then(data => {
-            const catUrl = data[0].url;
-            const catImage = document.getElementById('catImage');
-            catImage.src = catUrl;
-            catImage.style.display = 'block';
-            document.getElementById('catSound').play();
-            setTimeout(() => {
-              catImage.style.display = 'none';
-            }, 2000);
-          });
-      }
-      window.scrollTo(0, document.body.scrollHeight);
-    }, 100);
-
-    setTimeout(() => {
-      isLSD = true;
-      document.body.style.animation = "flicker 0.01s infinite";
-      textElement.innerHTML = "<pre>WHAT THE HELL IS HAPPENING</pre>";
       setTimeout(() => {
-        isLSD = false;
-        document.body.style.animation = "flicker 0.1s infinite";
-        textElement.innerHTML = "";
+        textElement.innerHTML = "<pre>Rebooting...</pre>";
         setTimeout(() => {
-          textElement.innerHTML = "<pre>wow you sufficed, good job.  (◕‿◕)</pre>";
+          textElement.innerHTML = "<pre>Reboot successful. Welcome back.</pre>";
           document.body.style.animation = "none";
+          document.body.style.backgroundColor = "white";
+          document.body.style.color = "black";
+          textElement.innerHTML = "<pre>Welcome to the calm environment.</pre>";
           setTimeout(() => {
-            textElement.innerHTML = "<pre>just kidding lol this doesn't end</pre>";
-            isLSD = true;
-            document.body.style.animation = "flicker 0.05s infinite";
-            textElement.innerHTML = "";
+            textElement.innerHTML = "<pre>I know your eyes hurt</pre>";
             setTimeout(() => {
-              textElement.innerHTML = "<pre>Loading...</pre>";
+              textElement.innerHTML = "<pre>Take a load off</pre>";
               setTimeout(() => {
-                textElement.innerHTML = "<pre>█░░░░░░░░░ 10%</pre>";
+                textElement.innerHTML = "";
+                isLSD = true;
+                document.body.style.animation = "flicker 0.01s infinite";
+                textElement.innerHTML = "";
                 setTimeout(() => {
-                  textElement.innerHTML = "<pre>███░░░░░░░ 30%</pre>";
+                  isLSD = false;
+                  document.body.style.animation = "flicker 0.1s infinite";
+                  textElement.innerHTML = "";
                   setTimeout(() => {
-                    textElement.innerHTML = "<pre>██████░░░░ 60%</pre>";
+                    textElement.innerHTML = "<pre>just kidding, here we go again</pre>";
+                    isLSD = true;
+                    document.body.style.animation = "flicker 0.05s infinite";
+                    textElement.innerHTML = "";
                     setTimeout(() => {
-                      textElement.innerHTML = "<pre>██████████ 100%</pre>";
-                      setTimeout(stopTextGeneration, 2000);
+                      textElement.innerHTML = "<pre>Loading...</pre>";
                       setTimeout(() => {
-                        textElement.innerHTML = "<pre>Rebooting...</pre>";
+                        textElement.innerHTML = "<pre>█░░░░░░░░░ 10%</pre>";
                         setTimeout(() => {
-                          textElement.innerHTML = "<pre>Reboot successful. Welcome back.</pre>";
-                          document.body.style.animation = "none";
-                          document.body.style.backgroundColor = "white";
-                          document.body.style.color = "black";
-                          textElement.innerHTML = "<pre>Welcome to the calm environment.</pre>";
+                          textElement.innerHTML = "<pre>███░░░░░░░ 30%</pre>";
                           setTimeout(() => {
-                            textElement.innerHTML = "<pre>I know your eyes hurt</pre>";
+                            textElement.innerHTML = "<pre>██████░░░░ 60%</pre>";
                             setTimeout(() => {
-                              textElement.innerHTML = "<pre>Take a load off</pre>";
+                              textElement.innerHTML = "<pre>██████████ 100%</pre>";
+                              setTimeout(stopTextGeneration, 2000);
                               setTimeout(() => {
-                                textElement.innerHTML = "";
-                                isLSD = true;
-                                document.body.style.animation = "flicker 0.01s infinite";
-                                textElement.innerHTML = "";
+                                textElement.innerHTML = "<pre>Rebooting...</pre>";
                                 setTimeout(() => {
-                                  isLSD = false;
-                                  document.body.style.animation = "flicker 0.1s infinite";
-                                  textElement.innerHTML = "";
+                                  textElement.innerHTML = "<pre>Reboot successful. Welcome back.</pre>";
+                                  document.body.style.animation = "none";
+                                  document.body.style.backgroundColor = "white";
+                                  document.body.style.color = "black";
+                                  textElement.innerHTML = "<pre>Welcome to the calm environment.</pre>";
                                   setTimeout(() => {
-                                    textElement.innerHTML = "<pre>just kidding, here we go again</pre>";
-                                    isLSD = true;
-                                    document.body.style.animation = "flicker 0.05s infinite";
-                                    textElement.innerHTML = "";
+                                    textElement.innerHTML = "<pre>Fake compiling...</pre>";
                                     setTimeout(() => {
-                                      textElement.innerHTML = "<pre>Loading...</pre>";
+                                      textElement.innerHTML = "<pre>Fake compiling... 10%</pre>";
                                       setTimeout(() => {
-                                        textElement.innerHTML = "<pre>█░░░░░░░░░ 10%</pre>";
+                                        textElement.innerHTML = "<pre>Fake compiling... 30%</pre>";
                                         setTimeout(() => {
-                                          textElement.innerHTML = "<pre>███░░░░░░░ 30%</pre>";
+                                          textElement.innerHTML = "<pre>Fake compiling... 60%</pre>";
                                           setTimeout(() => {
-                                            textElement.innerHTML = "<pre>██████░░░░ 60%</pre>";
+                                            textElement.innerHTML = "<pre>Fake compiling... 90%</pre>";
                                             setTimeout(() => {
-                                              textElement.innerHTML = "<pre>██████████ 100%</pre>";
-                                              setTimeout(stopTextGeneration, 2000);
+                                              textElement.innerHTML = "<pre>Fake compiling... 100%</pre>";
                                               setTimeout(() => {
-                                                textElement.innerHTML = "<pre>Rebooting...</pre>";
+                                                textElement.innerHTML = "";
+                                                isLSD = true;
+                                                document.body.style.animation = "flicker 0.01s infinite";
+                                                textElement.innerHTML = "";
                                                 setTimeout(() => {
-                                                  textElement.innerHTML = "<pre>Reboot successful. Welcome back.</pre>";
-                                                  document.body.style.animation = "none";
-                                                  document.body.style.backgroundColor = "white";
-                                                  document.body.style.color = "black";
-                                                  textElement.innerHTML = "<pre>Welcome to the calm environment.</pre>";
+                                                  isLSD = false;
+                                                  document.body.style.animation = "flicker 0.1s infinite";
+                                                  textElement.innerHTML = "";
                                                   setTimeout(() => {
-                                                    textElement.innerHTML = "<pre>Fake compiling...</pre>";
+                                                    textElement.innerHTML = "<pre>just kidding, here we go again</pre>";
+                                                    isLSD = true;
+                                                    document.body.style.animation = "flicker 0.05s infinite";
+                                                    textElement.innerHTML = "";
                                                     setTimeout(() => {
-                                                      textElement.innerHTML = "<pre>Fake compiling... 10%</pre>";
+                                                      textElement.innerHTML = "<pre>Loading...</pre>";
                                                       setTimeout(() => {
-                                                        textElement.innerHTML = "<pre>Fake compiling... 30%</pre>";
+                                                        textElement.innerHTML = "<pre>█░░░░░░░░░ 10%</pre>";
                                                         setTimeout(() => {
-                                                          textElement.innerHTML = "<pre>Fake compiling... 60%</pre>";
+                                                          textElement.innerHTML = "<pre>███░░░░░░░ 30%</pre>";
                                                           setTimeout(() => {
-                                                            textElement.innerHTML = "<pre>Fake compiling... 90%</pre>";
+                                                            textElement.innerHTML = "<pre>██████░░░░ 60%</pre>";
                                                             setTimeout(() => {
-                                                              textElement.innerHTML = "<pre>Fake compiling... 100%</pre>";
-                                                              setTimeout(() => {
-                                                                textElement.innerHTML = "";
-                                                                isLSD = true;
-                                                                document.body.style.animation = "flicker 0.01s infinite";
-                                                                textElement.innerHTML = "";
-                                                                setTimeout(() => {
-                                                                  isLSD = false;
-                                                                  document.body.style.animation = "flicker 0.1s infinite";
-                                                                  textElement.innerHTML = "";
-                                                                  setTimeout(() => {
-                                                                    textElement.innerHTML = "<pre>just kidding, here we go again</pre>";
-                                                                    isLSD = true;
-                                                                    document.body.style.animation = "flicker 0.05s infinite";
-                                                                    textElement.innerHTML = "";
-                                                                    setTimeout(() => {
-                                                                      textElement.innerHTML = "<pre>Loading...</pre>";
-                                                                      setTimeout(() => {
-                                                                        textElement.innerHTML = "<pre>█░░░░░░░░░ 10%</pre>";
-                                                                        setTimeout(() => {
-                                                                          textElement.innerHTML = "<pre>███░░░░░░░ 30%</pre>";
-                                                                          setTimeout(() => {
-                                                                            textElement.innerHTML = "<pre>██████░░░░ 60%</pre>";
-                                                                            setTimeout(() => {
-                                                                              textElement.innerHTML = "<pre>██████████ 100%</pre>";
-                                                                              setTimeout(stopTextGeneration, 2000);
-                                                                            }, 2000);
-                                                                          }, 1000);
-                                                                        }, 1000);
-                                                                      }, 2000);
-                                                                    }, 2000);
-                                                                  }, 2000);
-                                                                }, 5000);
-                                                              }, 2000);
+                                                              textElement.innerHTML = "<pre>██████████ 100%</pre>";
+                                                              setTimeout(stopTextGeneration, 2000);
                                                             }, 2000);
-                                                          }, 2000);
-                                                        }, 2000);
+                                                          }, 1000);
+                                                        }, 1000);
                                                       }, 2000);
                                                     }, 2000);
                                                   }, 2000);
-                                                }, 2000);
+                                                }, 5000);
                                               }, 2000);
                                             }, 2000);
-                                          }, 1000);
-                                        }, 1000);
+                                          }, 2000);
+                                        }, 2000);
                                       }, 2000);
                                     }, 2000);
                                   }, 2000);
-                                }, 5000);
-                              }, 40000);
+                                }, 2000);
+                              }, 2000);
                             }, 2000);
-                          }, 2000);
-                        }, 2000);
+                          }, 1000);
+                        }, 1000);
                       }, 2000);
                     }, 2000);
-                  }, 1000);
-                }, 1000);
-              }, 2000);
-            }, 2000);
+                  }, 2000);
+                }, 2000);
+              }, 5000);
+            }, 40000);
           }, 2000);
         }, 2000);
-      }, 5000);
-    }, 40000);
+      }, 2000);
+    }, 2000);
   </script>
 </body>
 </html>
