@@ -137,9 +137,14 @@
               }, 1000);
             }, 2000);
           }, 2000);
-        }, 60000);  // Add the "Anarchy" level after 60 seconds
+        }, 60000);  
       }, 60000);
     }
+
+    setTimeout(() => {
+      textElement.innerHTML = "<pre>Time's up! Embrance the chaos!</pre>";
+      setTimeout(hackerMode, 10000);
+    }, 10000);
   </script>
 </body>
 </html>
