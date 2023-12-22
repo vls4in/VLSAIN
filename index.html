@@ -12,17 +12,17 @@
   <style>
     body {
       background-color: black;
-      color: white;
+      color: lime;
       font-family: monospace;
       overflow: hidden;
-      animation: flicker 0.1s infinite;
     }
-    @keyframes flicker {
-      0% { background-color: black; color: white; }
-      25% { background-color: black; color: red; }
-      50% { background-color: red; color: white; }
-      75% { background-color: red; color: red; }
-      100% { background-color: white; color: red; }
+    @keyframes glitch {
+      0% { transform: rotate(0.02deg) scale(1.001); }
+      20% { transform: rotate(-0.1deg) scale(0.99); }
+      40% { transform: rotate(0.05deg) scale(1.01); }
+      60% { transform: rotate(0.03deg) scale(0.99); }
+      80% { transform: rotate(-0.02deg) scale(1.01); }
+      100% { transform: rotate(0.01deg) scale(0.999); }
     }
   </style>
 </head>
@@ -33,6 +33,14 @@
   <script>
     const textElement = document.getElementById('text');
     let isLSD = false;
+
+    function stopTextGeneration() {
+      clearInterval(textGeneration);
+      textElement.innerHTML = "<pre>ERROR: System malfunction</pre>";
+      textElement.style.animation = "glitch 0.2s infinite";
+      document.body.style.overflow = "hidden";
+      document.body.style.animation = "glitch 0.1s infinite";
+    }
 
     let textGeneration = setInterval(() => {
       let text = '';
@@ -55,15 +63,15 @@
           });
       }
       window.scrollTo(0, document.body.scrollHeight);
-    }, 100);
+    }, 10); // Reduced interval for ultra-fast characters
 
     setTimeout(() => {
       isLSD = true;
-      document.body.style.animation = "flicker 0.01s infinite";
+      document.body.style.animation = "none";
       textElement.innerHTML = "<pre>WHAT THE HELL IS HAPPENING</pre>";
       setTimeout(() => {
         isLSD = false;
-        document.body.style.animation = "flicker 0.1s infinite";
+        document.body.style.animation = "none";
         textElement.innerHTML = "";
         setTimeout(() => {
           textElement.innerHTML = "<pre>wow you sufficed, good job.  (◕‿◕)</pre>";
@@ -71,7 +79,7 @@
           setTimeout(() => {
             textElement.innerHTML = "<pre>just kidding lol this doesn't end</pre>";
             isLSD = true;
-            document.body.style.animation = "flicker 0.05s infinite";
+            document.body.style.animation = "none";
             textElement.innerHTML = "";
             setTimeout(() => {
               textElement.innerHTML = "<pre>Loading...</pre>";
@@ -84,67 +92,25 @@
                     setTimeout(() => {
                       textElement.innerHTML = "<pre>██████████ 100%</pre>";
                       setTimeout(stopTextGeneration, 2000);
+                      setTimeout(() => {
+                        textElement.innerHTML = "<pre>Rebooting...</pre>";
+                        setTimeout(() => {
+                          textElement.innerHTML = "<pre>Reboot successful. Welcome back.</pre>";
+                          document.body.style.animation = "none";
+                          document.body.style.backgroundColor = "black";
+                          document.body.style.color = "lime";
+                          textElement.innerHTML = "<pre>Welcome to the GREEN environment.</pre>";
+                        }, 2000);
+                      }, 2000);
                     }, 2000);
                   }, 1000);
                 }, 1000);
               }, 2000);
             }, 2000);
           }, 2000);
-        }, 5000);
-      }, 40000);
-    }, 2000);
-
-    function stopTextGeneration() {
-      clearInterval(textGeneration);
-      textElement.innerHTML = "<pre>ERROR: System malfunction</pre>";
-      textElement.style.animation = "glitch 0.2s infinite";
-      document.body.style.overflow = "hidden";
-      document.body.style.animation = "glitch 0.1s infinite";
-      setTimeout(hackerMode, 2000);
-    }
-
-    function hackerMode() {
-      document.body.style.animation = "hacker 0.01s infinite";
-      textElement.style.animation = "none";
-      let hackerText = setInterval(() => {
-        let text = '';
-        for (let i = 0; i < 100; i++) {
-          text += String.fromCharCode(Math.floor(Math.random() * (126 - 32) + 32));
-        }
-        textElement.innerHTML += text + '<br>';
-        window.scrollTo(0, document.body.scrollHeight);
-      }, 10);
-      setTimeout(() => {
-        textElement.innerHTML = "<pre>Have fun writing all your thoughts</pre>";  // Add the "Type Free" level
-        setTimeout(() => {
-          textElement.innerHTML = "";
-          isLSD = true;
-          document.body.style.animation = "flicker 0.05s infinite";
-          textElement.innerHTML = "";
-          setTimeout(() => {
-            textElement.innerHTML = "<pre>Loading...</pre>";
-            setTimeout(() => {
-              textElement.innerHTML = "<pre>█░░░░░░░░░ 10%</pre>";
-              setTimeout(() => {
-                textElement.innerHTML = "<pre>███░░░░░░░ 30%</pre>";
-                setTimeout(() => {
-                  textElement.innerHTML = "<pre>██████░░░░ 60%</pre>";
-                  setTimeout(() => {
-                    textElement.innerHTML = "<pre>██████████ 100%</pre>";
-                    setTimeout(stopTextGeneration, 2000);
-                  }, 2000);
-                }, 1000);
-              }, 1000);
-            }, 2000);
-          }, 2000);
-        }, 60000); 
-      }, 60000);
-    }
-
-    setTimeout(() => {
-      textElement.innerHTML = "<pre>Time's up! Embrace the chaos!</pre>";
-      setTimeout(hackerMode, 10000);
-    }, 10000);
+        }, 2000);
+      }, 2000);
+    }, 40000);
   </script>
 </body>
 </html>
