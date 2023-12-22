@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="definitely not eyerape">
+  <meta property="og:title" content="𓆗𖠚𓊪𖠚𓆗">
+  <meta property="og:description" content="definitely not eyerape">
+  <meta property="og:image" content="preview.png">
+  <title>𓆗𖠚𓊪𖠚𓆗</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      overflow: hidden;
+      animation: flicker 0.1s infinite;
+    }
+    @keyframes flicker {
+      0% { background-color: black; color: white; }
+      25% { background-color: black; color: red; }
+      50% { background-color: red; color: white; }
+      75% { background-color: red; color: red; }
+      100% { background-color: white; color: red; }
+    }
+  </style>
+</head>
+<body>
+  <div id="text"></div>
+  <audio id="catSound" src="boom.mp3"></audio>
+  <img src="" id="catImage" style="display: none; max-width: 100px; height: auto;">
+  <script>
+    const textElement = document.getElementById('text');
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+{}|:"<>?-=[]\;\',./`~ ';
+    let isLSD = false;
+
+    function generateText() {
+      let text = '';
+      for (let i = 0; i < 100; i++) {
+        text += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      if (isLSD) {
+        text = text.replace(/[A-Za-z0-9]/g, function(c) {
+          return String.fromCharCode(c.charCodeAt(0) + 0xFEE0);
+        });
+      }
+      if (Math.random() < 0.05) {
+        text = "VLSAIN";
+      }
+      textElement.innerHTML += text + '<br>';
+      if (Math.random() < 0.01) {
+        fetch('https://api.thecatapi.com/v1/images/search')
+          .then(response => response.json())
+          .then(data => {
+            const catUrl = data[0].url;
+            const catImage = document.getElementById('catImage');
+            catImage.src = catUrl;
+            catImage.style.display = 'block';
+            document.getElementById('catSound').play();
+            setTimeout(() => {
+              catImage.style.display = 'none';
+            }, 2000);
+          });
+      }
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+    setInterval(generateText, 100);
+
+    setTimeout(() => {
+      isLSD = true;
+      document.body.style.animation = "flicker 0.01s infinite";
+      textElement.innerHTML = "WHAT THE HELL IS HAPPENING";
+      setTimeout(() => {
+        isLSD = false;
+        document.body.style.animation = "flicker 0.1s infinite";
+        textElement.innerHTML = "";
+        setTimeout(() => {
+          textElement.innerHTML = "wow you sufficed, good job.  (◕‿◕)";
+          document.body.style.animation = "none";
+          setTimeout(() => {
+            textElement.innerHTML = "just kidding lol this doesn't end";
+            isLSD = true;
+            document.body.style.animation = "flicker 0.05s infinite";
+            textElement.innerHTML = "";
+            setInterval(generateText, 50);
+          }, 2000);
+        }, 2000);
+      }, 5000);
+    }, 40000);
+
+    document.documentElement.requestFullscreen();
+    document.addEventListener("fullscreenchange", function () {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      }
+    });
+  </script>
+</body>
+</html>
