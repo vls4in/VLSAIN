@@ -7,6 +7,7 @@
   <meta property="og:title" content="𓆗𖠚𓊪𖠚𓆗">
   <meta property="og:description" content="definitely not eyerape">
   <meta property="og:image" content="preview.png">
+  <link rel="icon" type="image/png" href="preview.png">
   <title>𓆗𖠚𓊪𖠚𓆗</title>
   <style>
     body {
@@ -41,6 +42,7 @@
     const textElement = document.getElementById('text');
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+{}|:"<>?-=[]\;\',./`~ ';
     let isLSD = false;
+    let glitchLevel = 0;
 
     function generateText() {
       let text = '';
@@ -106,6 +108,10 @@
                         textElement.innerHTML = "";
                         setInterval(generateText, 20);
                         document.body.style.overflow = "hidden";
+                        setInterval(() => {
+                          glitchLevel++;
+                          document.title = "Glitch Level: " + glitchLevel;
+                        }, 1000);
                       }, 2000);
                     }, 2000);
                   }, 1000);
