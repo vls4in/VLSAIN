@@ -24,42 +24,12 @@
       75% { background-color: red; color: red; }
       100% { background-color: white; color: red; }
     }
-    @keyframes glitch {
-      0% { transform: rotate(0.02deg) scale(1.001); }
-      20% { transform: rotate(-0.1deg) scale(0.99); }
-      40% { transform: rotate(0.05deg) scale(1.01); }
-      60% { transform: rotate(0.03deg) scale(0.99); }
-      80% { transform: rotate(-0.02deg) scale(1.01); }
-      100% { transform: rotate(0.01deg) scale(0.999); }
-    }
-    @keyframes hacker {
-      0% { background-color: black; color: green; }
-      100% { background-color: black; color: green; }
-    }
-    @keyframes poisonFlash {
-      0% { background-color: black; color: red; }
-      50% { background-color: red; color: black; }
-      100% { background-color: black; color: red; }
-    }
-    .poisonButton {
-      animation: glitch 0.2s infinite;
-      border: 2px solid white;
-      padding: 10px 20px;
-      margin: 10px;
-      cursor: pointer;
-      text-transform: uppercase;
-    }
   </style>
 </head>
 <body>
   <div id="text"></div>
   <audio id="catSound" src="boom.mp3"></audio>
   <img src="" id="catImage" style="display: none; max-width: 100px; height: auto;">
-  <div id="poisonScreen" style="display: none; text-align: center;">
-    <h1 style="animation: poisonFlash 1s infinite;">PICK YOUR POISON</h1>
-    <button class="poisonButton" id="openTabsButton"></button>
-    <button class="poisonButton" id="closeWindowButton"></button>
-  </div>
   <script>
     const textElement = document.getElementById('text');
     let isLSD = false;
@@ -145,7 +115,6 @@
         window.scrollTo(0, document.body.scrollHeight);
       }, 10);
       setTimeout(() => {
-        document.getElementById('poisonScreen').style.display = 'none';  // Change the display to 'none' to remove the "Pick Your Poison" buttons
         textElement.innerHTML = "<pre>Have fun writing all your thoughts</pre>";  // Add the "Type Free" level
         setTimeout(() => {
           textElement.innerHTML = "";
