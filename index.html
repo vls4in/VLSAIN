@@ -182,6 +182,37 @@
                                                                             setTimeout(() => {
                                                                               textElement.innerHTML = "<pre>██████████ 100%</pre>";
                                                                               setTimeout(stopTextGeneration, 2000);
+                                                                              setTimeout(() => {
+                                                                                textElement.innerHTML = "<pre>Rebooting...</pre>";
+                                                                                setTimeout(() => {
+                                                                                  textElement.innerHTML = "<pre>Reboot successful. Welcome back.</pre>";
+                                                                                  document.body.style.animation = "none";
+                                                                                  document.body.style.backgroundColor = "white";
+                                                                                  document.body.style.color = "black";
+                                                                                  textElement.innerHTML = "<pre>Welcome to the calm environment.</pre>";
+                                                                                  setTimeout(() => {
+                                                                                    textElement.innerHTML = "<pre>my names vlsain</pre>";
+                                                                                    textElement.style.animation = "glitch 0.1s infinite";
+                                                                                    textElement.style.position = "absolute";
+                                                                                    textElement.style.top = "50%";
+                                                                                    textElement.style.left = "50%";
+                                                                                    textElement.style.transform = "translate(-50%, -50%)";
+
+                                                                                    for (let i = 0; i < 100; i++) {
+                                                                                      const binaryLine = document.createElement('div');
+                                                                                      binaryLine.innerText = "0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101";
+                                                                                      binaryLine.style.position = "absolute";
+                                                                                      binaryLine.style.top = `${Math.random() * 100}vh`;
+                                                                                      binaryLine.style.left = `${Math.random() * 100}vw`;
+                                                                                      binaryLine.style.color = "green";
+                                                                                      binaryLine.style.whiteSpace = "nowrap";
+                                                                                      binaryLine.style.overflow = "hidden";
+                                                                                      binaryLine.style.animation = "flow 10s linear infinite";
+                                                                                      document.body.appendChild(binaryLine);
+                                                                                    }
+                                                                                  }, 2000);
+                                                                                }, 2000);
+                                                                              }, 2000);
                                                                             }, 2000);
                                                                           }, 1000);
                                                                         }, 1000);
@@ -220,6 +251,12 @@
       }, 5000);
     }, 40000);
   </script>
+  <style>
+    @keyframes flow {
+      to {
+        transform: translateX(-100vw);
+      }
+    }
+  </style>
 </body>
 </html>
-
