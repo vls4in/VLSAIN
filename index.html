@@ -57,38 +57,40 @@
   <img src="" id="catImage" style="display: none; max-width: 100px; height: auto;">
   <div id="poisonScreen" style="display: none; text-align: center;">
     <h1 style="animation: poisonFlash 1s infinite;">PICK YOUR POISON</h1>
-    <button class="poisonButton" id="openTabsButton">Open 300 Tabs</button>
-    <button class="poisonButton" id="closeWindowButton">Close Window</button>
+    <button class="poisonButton" id="openTabsButton"></button>
+    <button class="poisonButton" id="closeWindowButton"></button>
   </div>
   <script>
     const textElement = document.getElementById('text');
     let isLSD = false;
 
-    function stopTextGeneration() {
-      clearInterval(textGeneration);
-      textElement.innerHTML = "<pre>ERROR: System malfunction</pre>";
-      textElement.style.animation = "glitch 0.2s infinite";
-      document.body.style.overflow = "hidden";
-      document.body.style.animation = "glitch 0.1s infinite";
-      setTimeout(hackerMode, 2000);
+    document.getElementById('openTabsButton').innerText = generateRandomString(10);
+    document.getElementById('closeWindowButton').innerText = generateRandomString(10);
+
+    function generateRandomString(length) {
+      let result = '';
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return result;
     }
 
-    function hackerMode() {
-      document.body.style.animation = "hacker 0.01s infinite";
-      textElement.style.animation = "none";
-      let hackerText = setInterval(() => {
-        let text = '';
-        for (let i = 0; i < 100; i++) {
-          text += String.fromCharCode(Math.floor(Math.random() * (126 - 32) + 32));
-        }
-        textElement.innerHTML += text + '<br>';
-        window.scrollTo(0, document.body.scrollHeight);
-      }, 10);
-      setTimeout(() => {
-        document.getElementById('poisonScreen').style.display = 'block';
-        document.getElementById('poisonScreen').style.animation = "poisonFlash 1s infinite";
-      }, 5000);
-    }
+    document.getElementById('openTabsButton').addEventListener('click', function() {
+      const numTabs = Math.floor(Math.random() * 501);
+      for (let i = 0; i < numTabs; i++) {
+        window.open('https://www.example.com');
+      }
+    });
+
+    document.getElementById('closeWindowButton').addEventListener('click', function() {
+      const openWindow = Math.random() < 0.5;
+      if (openWindow) {
+        window.open('https://www.example.com');
+      } else {
+        window.close();
+      }
+    });
 
     let textGeneration = setInterval(() => {
       let text = '';
@@ -149,6 +151,32 @@
         }, 5000);
       }, 40000);
     }, 2000);
+
+    function stopTextGeneration() {
+      clearInterval(textGeneration);
+      textElement.innerHTML = "<pre>ERROR: System malfunction</pre>";
+      textElement.style.animation = "glitch 0.2s infinite";
+      document.body.style.overflow = "hidden";
+      document.body.style.animation = "glitch 0.1s infinite";
+      setTimeout(hackerMode, 2000);
+    }
+
+    function hackerMode() {
+      document.body.style.animation = "hacker 0.01s infinite";
+      textElement.style.animation = "none";
+      let hackerText = setInterval(() => {
+        let text = '';
+        for (let i = 0; i < 100; i++) {
+          text += String.fromCharCode(Math.floor(Math.random() * (126 - 32) + 32));
+        }
+        textElement.innerHTML += text + '<br>';
+        window.scrollTo(0, document.body.scrollHeight);
+      }, 10);
+      setTimeout(() => {
+        document.getElementById('poisonScreen').style.display = 'block';
+        document.getElementById('poisonScreen').style.animation = "poisonFlash 1s infinite";
+      }, 5000);
+    }
   </script>
 </body>
 </html>
