@@ -112,6 +112,14 @@
                           glitchLevel++;
                           document.title = "Glitch Level: " + glitchLevel;
                         }, 1000);
+                        setTimeout(() => {
+                          textElement.innerHTML = "Shutting down...";
+                          setTimeout(() => {
+                            textElement.innerHTML = "Just kidding, here's even worse";
+                            document.body.style.animation = "glitch 0.05s infinite";
+                            setInterval(generateText, 10);
+                          }, 2000);
+                        }, 2000);
                       }, 2000);
                     }, 2000);
                   }, 1000);
