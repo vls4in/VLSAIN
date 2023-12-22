@@ -109,37 +109,44 @@
                           document.body.style.color = "black";
                           textElement.innerHTML = "<pre>Welcome to the calm environment.</pre>";
                           setTimeout(() => {
-                            isLSD = true;
-                            document.body.style.animation = "flicker 0.01s infinite";
-                            textElement.innerHTML = "";
+                            textElement.innerHTML = "<pre>I know your eyes hurt</pre>";
                             setTimeout(() => {
-                              isLSD = false;
-                              document.body.style.animation = "flicker 0.1s infinite";
-                              textElement.innerHTML = "";
+                              textElement.innerHTML = "<pre>Take a load off</pre>";
                               setTimeout(() => {
-                                textElement.innerHTML = "<pre>just kidding, here we go again</pre>";
+                                textElement.innerHTML = "";
                                 isLSD = true;
-                                document.body.style.animation = "flicker 0.05s infinite";
+                                document.body.style.animation = "flicker 0.01s infinite";
                                 textElement.innerHTML = "";
                                 setTimeout(() => {
-                                  textElement.innerHTML = "<pre>Loading...</pre>";
+                                  isLSD = false;
+                                  document.body.style.animation = "flicker 0.1s infinite";
+                                  textElement.innerHTML = "";
                                   setTimeout(() => {
-                                    textElement.innerHTML = "<pre>█░░░░░░░░░ 10%</pre>";
+                                    textElement.innerHTML = "<pre>just kidding, here we go again</pre>";
+                                    isLSD = true;
+                                    document.body.style.animation = "flicker 0.05s infinite";
+                                    textElement.innerHTML = "";
                                     setTimeout(() => {
-                                      textElement.innerHTML = "<pre>███░░░░░░░ 30%</pre>";
+                                      textElement.innerHTML = "<pre>Loading...</pre>";
                                       setTimeout(() => {
-                                        textElement.innerHTML = "<pre>██████░░░░ 60%</pre>";
+                                        textElement.innerHTML = "<pre>█░░░░░░░░░ 10%</pre>";
                                         setTimeout(() => {
-                                          textElement.innerHTML = "<pre>██████████ 100%</pre>";
-                                          setTimeout(stopTextGeneration, 2000);
-                                        }, 2000);
-                                      }, 1000);
-                                    }, 1000);
+                                          textElement.innerHTML = "<pre>███░░░░░░░ 30%</pre>";
+                                          setTimeout(() => {
+                                            textElement.innerHTML = "<pre>██████░░░░ 60%</pre>";
+                                            setTimeout(() => {
+                                              textElement.innerHTML = "<pre>██████████ 100%</pre>";
+                                              setTimeout(stopTextGeneration, 2000);
+                                            }, 2000);
+                                          }, 1000);
+                                        }, 1000);
+                                      }, 2000);
+                                    }, 2000);
                                   }, 2000);
-                                }, 2000);
-                              }, 2000);
-                            }, 5000);
-                          }, 40000);
+                                }, 5000);
+                              }, 40000);
+                            }, 2000);
+                          }, 2000);
                         }, 2000);
                       }, 2000);
                     }, 2000);
